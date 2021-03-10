@@ -1,0 +1,5 @@
+Place the following CSV files in this folder to run any Jupyter Notebooks ending with 'SP.ipynb':
+
+- Nghia_NRD_2017.csv
+- NRD 2013 (machine learning).csv
+- NRD_2017_Defined_Cohort_Five_I10_DX.csv
