@@ -1,5 +1,5 @@
 Place the following CSV files in this folder to run any Jupyter Notebooks ending with 'SP.ipynb':
 
-- Nghia_NRD_2017.csv
-- NRD 2013 (machine learning).csv
-- NRD_2017_Defined_Cohort_Five_I10_DX.csv
+- Nghia_NRD_2017.csv (this file is created by running the NRD_merge_databases.ipynb notebook)
+- NRD 2013 (machine learning).csv (this file was created previously and is available as is)
+- NRD_2017_Defined_Cohort_Five_I10_DX.csv (this file is the result of running NRD_2017_Defining_Cohort_SP.ipynb)
