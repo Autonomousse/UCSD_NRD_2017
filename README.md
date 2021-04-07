@@ -17,7 +17,7 @@ Secondary outcome: Predict 90-day readmissions
 
 ## Getting Started
 
-See below for required tools in order to run or replicate this project. User may have to install or set up certain software/programs and links will be provided where applicable.
+See below for required tools in order to run or replicate this project. Users may have to install and set up certain programs/software, links provided where applicable/available.
 
 ### Prerequisites and Installation
 
