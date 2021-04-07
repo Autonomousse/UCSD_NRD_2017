@@ -28,6 +28,7 @@ See below for required tools in order to run or replicate this project. Users ma
 * [scikit-learn](https://scikit-learn.org/stable/) - Machine learning library for Python.
 * [Dask](https://dask.org/) - Allows advanced parallelism for analytics.
 * [tqdm](https://tqdm.github.io/) - Progress timer for processes.
+* [Jupyter Notebook](https://jupyter.org/) - Breaks down workflow processes into steps for validation.
 * Please install any additional Python dependencies, as needed, depending on your coding environment.
 
 ## Steps to Run Code
@@ -45,6 +46,7 @@ See below for required tools in order to run or replicate this project. Users ma
 * [scikit-learn](https://scikit-learn.org/stable/) - Machine learning library for Python.
 * [Dask](https://dask.org/) - Allows advanced parallelism for analytics.
 * [tqdm](https://tqdm.github.io/) - Progress timer for processes.
+* [Jupyter Notebook](https://jupyter.org/) - Breaks down workflow processes into steps for validation.
 * [Visual Studio Code](https://code.visualstudio.com/) - Open source code editor.
 
 ## Contributors
