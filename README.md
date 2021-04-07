@@ -11,7 +11,7 @@ Secondary outcome: Predict 90-day readmissions
 
 [insert proposal here, reason for relevance]
 
-### Findings
+## Findings
 
 [insert findings with some images here]
 
