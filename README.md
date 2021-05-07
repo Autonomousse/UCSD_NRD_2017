@@ -2,9 +2,15 @@
 
 UCSD Health - NRD 2013 and 2017 IBD Research
 
+## Background
+
 ## Proposal
 
 Develop new prediction models using tree based algorithms to identify healthcare patients who require extensive hospital utilization. These patients will be defined as high-need, high cost (HNHC). With a successful model, our goal is to create a tool that empowers hospitals to identify HNHC patients ahead of time and be able to put cost saving measures in place, while still providing satisfactory service.
+
+## Data Sources
+
+## Models
 
 ## Findings
 
@@ -34,6 +40,7 @@ We also ran a similar study using 10 features and obtained similar results betwe
 
 There is strong evidence that tree based models such as DTC and XGB are outperforming traditional models like LR. We can conclude that the tree based models are significantly better than traditional models at predicting patients who are at risk of becoming HNHC and that HNHC may be a more qualified target than 90 day readmission in making these assessments.
 
+## Conclusions
 
 ## Getting Started
 
@@ -71,7 +78,6 @@ See below for required tools in order to run or replicate this project. Users ma
 
 ## Contributors
 
-[do we want links to github, linkedin, elsewhere?]
 * [Nghia Nguyen](https://github.com/nghia-h-nguyen) - 
 * [Alexander Qian](https://github.com/alexsqian) - 
 * [Peter Chen](https://github.com/datailluminations) - 
@@ -91,4 +97,3 @@ See below for required tools in order to run or replicate this project. Users ma
 ## License
 
 All rights reserved 2020. The team members (contributors) above own all rights to the project and code they have created.
-[does ucsd health have a specific license we need to include, some other licenses?]
