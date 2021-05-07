@@ -14,11 +14,15 @@ Using this cohort and all of the features associated with them, we ran Recursive
 
 The three models consisted of a traditional Logistic Regression (LR) model, a Decision Tree Classifier (DTC) model, and a gradient boosted decision tree model referred to as XGBoost (XGB). Passing in the features from RFE, we came to the conclusion that the tree based models were outperforming the logistic regression model. Established on these findings, we decided to validate our models and feature selections by attempting to replicate our work on the 2017 NRD dataset. There were a few features that were missing or had different definitions when NRD swapped from ICD-9 to ICD-10 codes. ICD is the International Classification of Diseases and Related Health Problems, a globally accepted standard coding practice which is updated from time to time.
 
-Below we can see some of the comparisons between the two years, 2013 (test set) and 2017 (validation set):
+One of the selected features was "los", length of stay. This feature could potentially bias the results as the longer a person is in the hospital, the more resources they utilize and the higher the associated costs. To remove any bias from the feature "los", we ran the same algorithms again after removing "los" from the available features. Below are the top 5 features selected by RFE and the cross validated AUC charts for the NRD 2013 (test set) and NRD 2017 (validation set) data sets without "los":
+
+[insert charts and explanations here]
+
+We also ran a similar study using 10 features and obtained similar results between the NRD 2013 and NRD 2017 datasets. Comparing HNHC to a target of 90 day readmission also depicts that HNHC is a better candidate for a target variable as it has significantly better prediction capabilities when looking at the AUC charts. An example of the DTC model below indicates the difference in cross validated AUC between the HNHC and 90 day readmission target outcomes in the NRD 2017 dataset:
 
 [insert charts here]
 
-There is strong evidence that tree based models such as DTC and XGB are outperforming traditional models like LR. We can conclude that the tree based models are significantly better than traditional models at predicting patients who are at risk of becoming HNHC.
+There is strong evidence that tree based models such as DTC and XGB are outperforming traditional models like LR. We can conclude that the tree based models are significantly better than traditional models at predicting patients who are at risk of becoming HNHC and that HNHC may be a more qualified target than 90 day readmission in making these assessments.
 
 
 ## Getting Started
