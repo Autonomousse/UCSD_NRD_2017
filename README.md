@@ -17,7 +17,7 @@ The three models consisted of a traditional Logistic Regression (LR) model, a De
 One of the selected features was "los", length of stay. This feature could potentially bias the results as the longer a person is in the hospital, the more resources they utilize and the higher the associated costs. To remove any bias from the feature "los", we ran the same algorithms again after removing "los" from the available features. Below are the top 5 features selected by RFE and the cross validated AUC charts for the NRD 2013 (test set) and NRD 2017 (validation set) data sets without "los":
 
 Logistic Regression:
-![NRD 2013 LR Test Set](https://github.com/Autonomousse/UCSD_NRD_2017/tree/master/images/lr_test.png)
+![NRD 2013 LR Test Set](https://github.com/Autonomousse/UCSD_NRD_2017/images/lr_test.png)
 ![NRD 2017 LR Validation Set](https://github.com/Autonomousse/UCSD_NRD_2017/tree/master/images/lr_valid.png)
 
 Decision Tree Classifier:
