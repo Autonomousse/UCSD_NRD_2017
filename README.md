@@ -12,6 +12,21 @@ Develop new prediction models using tree based algorithms to identify healthcare
 
 ## Models
 
+A decision tree is a machine learning model based on binary trees. A decision tree learns the relationship between data in a training set, represented as features(X) and target values(Y), by examining and transforming training data into a binary tree of interior nodes and leaf nodes. 
+
+Each leaf node in the decision tree is responsible for making a specific prediction. For classification trees, the prediction is a target category, such as cancer or not-cancer. A decision tree carves up the feature space into groups of observations that share similar target values and each leaf represents one of these groups. 
+
+Let’s examine a real life decision visualization to understand better using one of the figures from our project.
+
+### Insert picture here. 
+
+At the very top is the root node. It shows there are 35,511 observations in the sample. The decision rule is if the feature orproc less than or equal to 0.5 then we go do the left branch of the tree(True) else we go down the right branch of the tree(False). In the value array we see there are 31,942 samples in the left branch(True) and 3,569 samples in the right branch(False)
+
+The rule is the same as we go down the tree at each node until we arrive at the bottom leaf nodes where we can see the class labels(none or HNHC).
+
+Gini index or Gini impurity measures the degree or probability of a particular variable being wrongly classified when it is randomly chosen. If all the observations belong to a single class, then it can be called pure. The Gini index ranges between 0 and 1, where 0 denotes that all observations belong to a certain class or if there exists only one class, and 1 denotes all the observations are randomly distributed across various classes. A Gini Index of 0.5 denotes equally distributed observations into some classes.
+XGboost is a decision-tree based ensemble machine learning model that uses gradient boosting. Ensemble learning is a type of machine learning that uses many models to make predictions together. Boosting algorithms are different  from other ensemble learning techniques by building a sequence of initially weak models into increasingly more powerful models. Gradient boosting algorithms choose how to build a more powerful model using the gradient of a loss function that captures the performance of a model.
+
 ## Findings
 
 Starting with the patients in the Nationwide Readmission Database (NRD) from 2013, we extracted and transformed the data, merging it with other available data to create our cohort. Patients consist of adults who were hospitalized with inflammatory bowel disease (IBD) since these patients typically have high hospital utilization costs due to unplanned hospitalizations. HNHC patients are a subgroup of IBD patients who have the most healthcare utilization. Of this subgroup of HNHC patients, we found the top decile and used that group as our final cohort.
