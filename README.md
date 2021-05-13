@@ -4,11 +4,15 @@ UCSD Health - NRD 2013 and 2017 IBD Research
 
 ## Background
 
+Inflammatory bowel diseases (IBD) are chronic conditions with a relapsing and remitting course that affects more than 1.6 million people in the United States (US) and requires lifelong care, which is associated with significant healthcare costs, with annual healthcare costs estimated to exceed $25.6 billion. While costs for pharmaceuticals are rising, especially with new biologic and small molecule therapies, the number one driver of IBD-related healthcare costs continues to be hospitalizations and emergency room visits, which account for 56% of total health costs in the United States. Current studies estimate ~22-45% of patients with IBD are hospitalized within five years of their diagnosis, with one in five hospitalized patients with IBD readmitted within 30 days of hospital. In patients who have been hospitalized, a subset of high-need, high-cost (HNHC) patients account for a significant proportion of healthcare spending. In previous studies on hospitalizations, hospitalized IBD patients spend a median 6 days in the hospital annually with a subset of HNHC patients spending over 45 days in the hospitally annually with one hospitalized every 2 months and account for 38% of total hospitalization costs. With rising healthcare costs for IBD patients, population health management strategies are needed to inform value-based care for these patients. The first step of population health manamgent is to accurately identify HNHC patients. Current regression-based prediction models to identify hospitalized patients who may progress to HNHC status have poor discrminative performance. Machine learning algorithms may overcome the limitations of regression-based models by accounting for a larger number of potential risk factors and accounting for non-linear relationships. 
+
 ## Proposal
 
-Develop new prediction models using tree based algorithms to identify healthcare patients who require extensive hospital utilization. These patients will be defined as high-need, high cost (HNHC). With a successful model, our goal is to create a tool that empowers hospitals to identify HNHC patients ahead of time and be able to put cost saving measures in place, while still providing satisfactory service.
+The goal of our study is to develop and externally validate novel, simplified, easy-to-understand, point-of-care models built on readily available administrative claims data to accurately identify patients with IBD at risk for becoming high-need, high cost (HNHC).
 
 ## Data Sources
+
+Nationwide readmissions databases - years 2013 (model development) and 2017 (external validation). 
 
 ## Models
 
