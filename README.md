@@ -98,7 +98,7 @@ See below for required tools in order to run or replicate this project. Users ma
 
 * [Nghia Nguyen](https://github.com/nghia-h-nguyen) - https://www.linkedin.com/in/nghia-nguyen-7794578/
 * [Alexander Qian](https://github.com/alexsqian) - 
-* [Peter Chen](https://github.com/datailluminations) - 
+* [Peter Chen](https://github.com/datailluminations) - https://www.linkedin.com/in/peterljchen/
 * [Sagar Patel](https://github.com/Autonomousse) - 
 
 ## Acknowledgments
