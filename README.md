@@ -1,20 +1,36 @@
-# UCSD_NRD_2017
-
-UCSD Health - NRD 2013 and 2017 IBD Research
-
 ## Background
+
+Inflammatory bowel diseases (IBD) are chronic conditions with a relapsing and remitting course that affects more than 1.6 million people in the United States (US). Patients with IBD require lifelong care, which is associated with significant healthcare costs, with annual healthcare costs estimated to exceed $25.6 billion. While costs for pharmaceuticals are rising, especially with new biologic and small molecule therapies, the number one driver of IBD-related healthcare costs continues to be hospitalizations and emergency room visits, which account for 56% of total health costs in the United States. Current studies estimate ~22-45% of patients with IBD are hospitalized within five years of their diagnosis, with one in five hospitalized patients with IBD readmitted within 30 days of hospital. In patients who have been hospitalized, a subset of high-need, high-cost (HNHC) patients account for a significant proportion of healthcare spending. In previous studies on hospitalizations, hospitalized IBD patients spend a median 6 days in the hospital annually with a subset of HNHC patients spending over 45 days in the hospitally annually with one hospitalized every 2 months and account for 38% of total hospitalization costs. With rising healthcare costs for IBD patients, population health management strategies are needed to inform value-based care for these patients. The first step of population health manamgent is to accurately identify HNHC patients. Current regression-based prediction models to identify hospitalized patients who may progress to HNHC status have poor discrminative performance. Machine learning algorithms may overcome the limitations of regression-based models by accounting for a larger number of potential risk factors and accounting for non-linear relationships. 
 
 ## Proposal
 
-Develop new prediction models using tree based algorithms to identify healthcare patients who require extensive hospital utilization. These patients will be defined as high-need, high cost (HNHC). With a successful model, our goal is to create a tool that empowers hospitals to identify HNHC patients ahead of time and be able to put cost saving measures in place, while still providing satisfactory service.
+The goal of our study is to develop and externally validate novel, simplified, easy-to-understand, point-of-care models built on readily available administrative claims data to accurately identify patients with IBD at risk for becoming high-need, high cost (HNHC).
 
 ## Data Sources
 
+Nationwide readmissions databases (NRD) - years 2013 (model development) and 2017 (external validation). NRD is an all-payer database of hospital inpatient stays which longitudinally captures more than 85% of inpatient discharges from more than 20 state inpatient databases. The NRD is part of a family of databases developed for the Healthcare Cost and Utilization Project (HCUP) designed to help researchers and policy makers analyzze national readmissions rates for all pateints. 
+
 ## Models
 
-## Findings
+A decision tree is a machine learning model based on binary trees. A decision tree learns the relationship between data in a training set, represented as features(X) and target values(Y), by examining and transforming training data into a binary tree of interior nodes and leaf nodes. 
 
-Starting with the patients in the Nationwide Readmission Database (NRD) from 2013, we extracted and transformed the data, merging it with other available data to create our cohort. Patients consist of adults who were hospitalized with inflammatory bowel disease (IBD) since these patients typically have high hospital utilization costs due to unplanned hospitalizations. HNHC patients are a subgroup of IBD patients who have the most healthcare utilization. Of this subgroup of HNHC patients, we found the top decile and used that group as our final cohort.
+Each leaf node in the decision tree is responsible for making a specific prediction. For classification trees, the prediction is a target category, such as cancer or not-cancer. A decision tree carves up the feature space into groups of observations that share similar target values and each leaf represents one of these groups. 
+
+Let’s examine a real life decision visualization to understand better using one of the figures from our project.
+
+### Insert picture here. 
+
+At the very top is the root node. It shows there are 35,511 observations in the sample. The decision rule is if the feature orproc less than or equal to 0.5 then we go do the left branch of the tree(True) else we go down the right branch of the tree(False). In the value array we see there are 31,942 samples in the left branch(True) and 3,569 samples in the right branch(False)
+
+The rule is the same as we go down the tree at each node until we arrive at the bottom leaf nodes where we can see the class labels(none or HNHC).
+
+Gini index or Gini impurity measures the degree or probability of a particular variable being wrongly classified when it is randomly chosen. If all the observations belong to a single class, then it can be called pure. The Gini index ranges between 0 and 1, where 0 denotes that all observations belong to a certain class or if there exists only one class, and 1 denotes all the observations are randomly distributed across various classes. A Gini Index of 0.5 denotes equally distributed observations into some classes.
+
+XGboost is a decision-tree based ensemble machine learning model that uses gradient boosting. Ensemble learning is a type of machine learning that uses many models to make predictions together. Boosting algorithms are different  from other ensemble learning techniques by building a sequence of initially weak models into increasingly more powerful models. Gradient boosting algorithms choose how to build a more powerful model using the gradient of a loss function that captures the performance of a model.
+
+## Model development/validation and findings
+
+We used NRD 2013 for the development of our tree-based machine learning algorithms and regression models, while NRD 2017 was used for external validation of our models. A full description of the methodology can be found in our published manuscript. 
 
 Using this cohort and all of the features associated with them, we ran Recursive Feature Elimination (RFE) to identify the top features in three model types. By using RFE and not hand selecting features, we are allowing an algorithm to articulate which features it deems the most important based on the parameters that are given. This also negates any confirmation bias that a researcher may have based on prior knowledge of feature importance as RFE has no outside knowledge of how these features may be related to the target variable. 
 
@@ -34,13 +50,15 @@ XGBoost:
 * [NRD 2013 XGB Test Set](https://github.com/Autonomousse/UCSD_NRD_2017/tree/master/images/xgb_test.png)
 * [NRD 2017 XGB Validation Set](https://github.com/Autonomousse/UCSD_NRD_2017/tree/master/images/xgb_valid.png)
 
-We also ran a similar study using 10 features and obtained similar results between the NRD 2013 and NRD 2017 datasets. Comparing HNHC to a target of 90 day readmission also depicts that HNHC is a better candidate for a target variable as it has significantly better prediction capabilities when looking at the AUC charts. An example of the DTC model below indicates the difference in cross validated AUC between the HNHC and 90 day readmission target outcomes in the NRD 2017 dataset:
+We also conducted sensitivity analysis using 10 features and obtained similar results between the NRD 2013 and NRD 2017 datasets. Comparing HNHC to a target of 90 day readmission also depicts that HNHC is a better candidate for a target variable as it has significantly better prediction capabilities when looking at the AUC charts. An example of the DTC model below indicates the difference in cross validated AUC between the HNHC and 90 day readmission target outcomes in the NRD 2017 dataset:
 
 * [HNHC vs 90 Day Readmission](https://github.com/Autonomousse/UCSD_NRD_2017/tree/master/images/hnhc_readm.png)
 
-There is strong evidence that tree based models such as DTC and XGB are outperforming traditional models like LR. We can conclude that the tree based models are significantly better than traditional models at predicting patients who are at risk of becoming HNHC and that HNHC may be a more qualified target than 90 day readmission in making these assessments.
+There is strong evidence that tree based models such as DTC and XGB are outperforming traditional models like LR. We can conclude that the tree based models are significantly better than traditional models at predicting patients who are at risk of becoming HNHC. Tree-based models also outperformed LR in predicting our secondary outcome of 90-day readmission. 
 
 ## Conclusions
+
+Using a nationally representative cohort, we developed simplified tree-based ML models that outperformed traditional LR model in identifying patients with IBD at risk for progression to HNHC and 90-day readmission risk. Population health management strategies using simplified tree-based algorithms on available administrative claims data can accurately identify patients at-risk for becoming HNHC to inform targeted, high-value, low-cost interventions for these patients. 
 
 ## Getting Started
 
@@ -78,22 +96,16 @@ See below for required tools in order to run or replicate this project. Users ma
 
 ## Contributors
 
-* [Nghia Nguyen](https://github.com/nghia-h-nguyen) - 
+* [Nghia Nguyen](https://github.com/nghia-h-nguyen) - https://www.linkedin.com/in/nghia-nguyen-7794578/
 * [Alexander Qian](https://github.com/alexsqian) - 
-* [Peter Chen](https://github.com/datailluminations) - 
+* [Peter Chen](https://github.com/datailluminations) - https://www.linkedin.com/in/peterljchen/
 * [Sagar Patel](https://github.com/Autonomousse) - 
 
 ## Acknowledgments
 
 * [HCUP](https://www.hcup-us.ahrq.gov/) - Largest collection of longitudinal hospital care data in the United States.
 * [ICD10Data.com](https://www.icd10data.com/) - Medical coding reference.
-[need to site where we got nrd data, hospital data, severity data?]
-[any others?]
 
 ## Publications and Recognition
 
-[should we add the acceptance we got for the proposal here?]
-
-## License
-
-All rights reserved 2020. The team members (contributors) above own all rights to the project and code they have created.
+Link to our full publication: ### insert publication link here
