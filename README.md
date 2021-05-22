@@ -39,20 +39,20 @@ The three models consisted of a traditional Logistic Regression (LR) model, a De
 One of the selected features was "los", length of stay. This feature could potentially bias the results as the longer a person is in the hospital, the more resources they utilize and the higher the associated costs. To remove any bias from the feature "los", we ran the same algorithms again after removing "los" from the available features. Below are the top 5 features selected by RFE and the cross validated AUC charts for the NRD 2013 (test set) and NRD 2017 (validation set) data sets without "los":
 
 Logistic Regression:
-* ![NRD 2013 LR Test Set](images/lr_test.png)
-* ![NRD 2017 LR Validation Set](images/lr_valid.png)
+![NRD 2013 LR Test Set](images/lr_test.png)
+![NRD 2017 LR Validation Set](images/lr_valid.png)
 
 Decision Tree Classifier:
-* [NRD 2013 DTC Test Set](images/dtc_test.png)
-* [NRD 2017 DTC Validation Set](images/dtc_valid.png)
+[NRD 2013 DTC Test Set](images/dtc_test.png)
+[NRD 2017 DTC Validation Set](images/dtc_valid.png)
 
 XGBoost:
-* [NRD 2013 XGB Test Set](images/xgb_test.png)
-* [NRD 2017 XGB Validation Set](images/xgb_valid.png)
+[NRD 2013 XGB Test Set](images/xgb_test.png)
+[NRD 2017 XGB Validation Set](images/xgb_valid.png)
 
 We also conducted sensitivity analysis using 10 features and obtained similar results between the NRD 2013 and NRD 2017 datasets. Comparing HNHC to a target of 90 day readmission also depicts that HNHC is a better candidate for a target variable as it has significantly better prediction capabilities when looking at the AUC charts. An example of the DTC model below indicates the difference in cross validated AUC between the HNHC and 90 day readmission target outcomes in the NRD 2017 dataset:
 
-* [HNHC vs 90 Day Readmission](images/hnhc_readm.png)
+[HNHC vs 90 Day Readmission](images/hnhc_readm.png)
 
 There is strong evidence that tree based models such as DTC and XGB are outperforming traditional models like LR. We can conclude that the tree based models are significantly better than traditional models at predicting patients who are at risk of becoming HNHC. Tree-based models also outperformed LR in predicting our secondary outcome of 90-day readmission. 
 
