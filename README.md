@@ -18,7 +18,8 @@ Each leaf node in the decision tree is responsible for making a specific predict
 
 Let’s examine a real life decision visualization to understand better using one of the figures from our project.
 
-### Insert picture here. 
+### DTC Max Depth of 5 with 3 Shown.
+![DTC Max Depth of 5 with 3 Shown](images/dtc_max_depth.png)
 
 At the very top is the root node. It shows there are 35,511 observations in the sample. The decision rule is if the feature orproc less than or equal to 0.5 then we go do the left branch of the tree(True) else we go down the right branch of the tree(False). In the value array we see there are 31,942 samples in the left branch(True) and 3,569 samples in the right branch(False)
 
@@ -80,7 +81,10 @@ See below for required tools in order to run or replicate this project. Users ma
 
 1. Install and set up all of the prerequisites per the instructions provided by the developers.
 2. Create a clone of the repository to your local system.
-3. [continue once we know what files will be available on the repo]
+3. Obtain data from NRD, including core, severity, and hospital files.
+4. Run the [NRD_merge_databases](NRD_merge_databases.ipynb) Jupyter Notebook to merge all files.
+5. With the merged CSV file, run the [NRD_2017_Defining_Cohort_SP](NRD_2017_Defining_Cohort_SP.ipynb) Jupyter Notebook to define and create the cohort.
+6. At this point, any of the Jupyter Notebooks starting with ***NRD_2017_ML*** can be run to obtain feature sets and scores based on the criteria within.
 
 ## Built With
 
