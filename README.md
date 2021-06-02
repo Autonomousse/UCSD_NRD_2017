@@ -18,7 +18,7 @@ Each leaf node in the decision tree is responsible for making a specific predict
 
 Let’s examine a real life decision visualization to understand better using one of the figures from our project.
 
-### DTC Max Depth of 5 with 3 Shown.
+### DTC Max Depth of 5 with 3 Shown:
 ![DTC Max Depth of 5 with 3 Shown](images/dtc_max_depth.png)
 
 At the very top is the root node. It shows there are 35,511 observations in the sample. The decision rule is if the feature orproc less than or equal to 0.5 then we go do the left branch of the tree(True) else we go down the right branch of the tree(False). In the value array we see there are 31,942 samples in the left branch(True) and 3,569 samples in the right branch(False)
