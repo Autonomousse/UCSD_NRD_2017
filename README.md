@@ -2,7 +2,7 @@
 
 ## Background
 
-Inflammatory bowel diseases (IBD) are chronic conditions with a relapsing and remitting course that affects more than 1.6 million people in the United States (US). Patients with IBD require lifelong care, which is associated with significant healthcare costs, with annual healthcare costs estimated to exceed $25.6 billion. While costs for pharmaceuticals are rising, especially with new biologic and small molecule therapies, the number one driver of IBD-related healthcare costs continues to be hospitalizations and emergency room visits, which account for 56% of total health costs in the United States. Current studies estimate ~22-45% of patients with IBD are hospitalized within five years of their diagnosis, with one in five hospitalized patients with IBD readmitted within 30 days of hospital. In patients who have been hospitalized, a subset of high-need, high-cost (HNHC) patients account for a significant proportion of healthcare spending. In previous studies on hospitalizations, hospitalized IBD patients spend a median 6 days in the hospital annually with a subset of HNHC patients spending over 45 days in the hospitally annually with one hospitalized every 2 months and account for 38% of total hospitalization costs. With rising healthcare costs for IBD patients, population health management strategies are needed to inform value-based care for these patients. The first step of population health manamgent is to accurately identify HNHC patients. Current regression-based prediction models to identify hospitalized patients who may progress to HNHC status have poor discrminative performance. Machine learning algorithms may overcome the limitations of regression-based models by accounting for a larger number of potential risk factors and accounting for non-linear relationships. 
+Inflammatory bowel diseases (IBD) are chronic conditions with a relapsing and remitting course that affect more than 1.6 million people in the United States (US). Patients with IBD require lifelong care, which is associated with significant healthcare costs, with annual healthcare costs estimated to exceed $25.6 billion. While costs for pharmaceuticals are rising, especially with new biologic and small molecule therapies, the number one driver of IBD-related healthcare costs continues to be hospitalizations and emergency room visits, which account for 56% of total health costs in the United States. Current studies estimate ~22-45% of patients with IBD are hospitalized within five years of their diagnosis, with one in five hospitalized patients with IBD readmitted within 30 days. In patients who have been hospitalized, a subset of high-need, high-cost (HNHC) patients account for a significant proportion of healthcare spending. In previous studies on hospitalizations, hospitalized IBD patients spend a median 6 days in the hospital annually with a subset of HNHC patients spending over 45 days in the hospital annually with one hospitalized every 2 months and account for 38% of total hospitalization costs. With rising healthcare costs for IBD patients, population health management strategies are needed to inform value-based care for these patients. The first step of population health management is to accurately identify HNHC patients. Current regression-based prediction models to identify hospitalized patients who may progress to HNHC status have poor discriminative performance. Machine learning algorithms may overcome the limitations of regression-based models by accounting for a larger number of potential risk factors and accounting for non-linear relationships. 
 
 ## Proposal
 
@@ -10,11 +10,11 @@ The goal of our study is to develop and externally validate novel, simplified, e
 
 ## Data Sources
 
-Nationwide readmissions databases (NRD) - years 2013 (model development) and 2017 (external validation). NRD is an all-payer database of hospital inpatient stays which longitudinally captures more than 85% of inpatient discharges from more than 20 state inpatient databases. The NRD is part of a family of databases developed for the Healthcare Cost and Utilization Project (HCUP) designed to help researchers and policy makers analyzze national readmissions rates for all pateints. 
+Nationwide readmissions databases (NRD) - years 2013 (model development) and 2017 (external validation). NRD is an all-payer database of hospital inpatient stays which longitudinally captures more than 85% of inpatient discharges from more than 20 state inpatient databases. The NRD is part of a family of databases developed for the Healthcare Cost and Utilization Project (HCUP) designed to help researchers and policy makers analyze national readmission rates for all patients. 
 
 ## Models
 
-A decision tree is a machine learning model based on binary trees. A decision tree learns the relationship between data in a training set, represented as features(X) and target values(Y), by examining and transforming training data into a binary tree of interior nodes and leaf nodes. 
+A decision tree is a machine learning model based on binary trees. A decision tree learns the relationship between data in a training set, represented as features (X) and target values (Y), by examining and transforming training data into a binary tree of interior nodes and leaf nodes. 
 
 Each leaf node in the decision tree is responsible for making a specific prediction. For classification trees, the prediction is a target category, such as cancer or not-cancer. A decision tree carves up the feature space into groups of observations that share similar target values and each leaf represents one of these groups. 
 
@@ -23,13 +23,13 @@ Let’s examine a real life decision visualization to understand better using on
 ### DTC Max Depth of 5 with 3 Shown:
 ![DTC Max Depth of 5 with 3 Shown](images/dtc_max_depth.png)
 
-At the very top is the root node. It shows there are 35,511 observations in the sample. The decision rule is if the feature orproc less than or equal to 0.5 then we go do the left branch of the tree(True) else we go down the right branch of the tree(False). In the value array we see there are 31,942 samples in the left branch(True) and 3,569 samples in the right branch(False)
+At the very top is the root node. It shows there are 35,511 observations in the sample. The decision rule is if the feature orproc is less than or equal to 0.5 then we go do the left branch of the tree (True) else we go down the right branch of the tree (False). In the value array we see there are 31,942 samples in the left branch (True) and 3,569 samples in the right branch (False).
 
-The rule is the same as we go down the tree at each node until we arrive at the bottom leaf nodes where we can see the class labels(none or HNHC).
+The rule is the same as we go down the tree at each node until we arrive at the bottom leaf nodes where we can see the class labels (none or HNHC).
 
-Gini index or Gini impurity measures the degree or probability of a particular variable being wrongly classified when it is randomly chosen. If all the observations belong to a single class, then it can be called pure. The Gini index ranges between 0 and 1, where 0 denotes that all observations belong to a certain class or if there exists only one class, and 1 denotes all the observations are randomly distributed across various classes. A Gini Index of 0.5 denotes equally distributed observations into some classes.
+Gini index or Gini impurity measures the degree or probability of a particular variable being wrongly classified when it is randomly chosen. If all the observations belong to a single class, then it can be called pure. The Gini index ranges between 0 and 1, where 0 denotes that all observations belong to a certain class or if there exists only one class, 1 denotes all the observations are randomly distributed across various classes. A Gini Index of 0.5 denotes equally distributed observations into some classes.
 
-XGboost is a decision-tree based ensemble machine learning model that uses gradient boosting. Ensemble learning is a type of machine learning that uses many models to make predictions together. Boosting algorithms are different  from other ensemble learning techniques by building a sequence of initially weak models into increasingly more powerful models. Gradient boosting algorithms choose how to build a more powerful model using the gradient of a loss function that captures the performance of a model.
+XGboost is a decision-tree based ensemble machine learning model that uses gradient boosting. Ensemble learning is a type of machine learning that uses many models to make predictions together. Boosting algorithms differ from other ensemble learning techniques by building a sequence of initially weak models into increasingly more powerful models. Gradient boosting algorithms choose how to build a more powerful model using the gradient of a loss function that captures the performance of a model.
 
 ## Model development/validation and findings
 
@@ -87,6 +87,7 @@ See below for required tools in order to run or replicate this project. Users ma
 4. Run the [NRD_merge_databases](NRD_merge_databases.ipynb) Jupyter Notebook to merge all files.
 5. With the merged CSV file, run the [NRD_2017_Defining_Cohort_SP](NRD_2017_Defining_Cohort_SP.ipynb) Jupyter Notebook to define and create the cohort.
 6. At this point, any of the Jupyter Notebooks starting with ***NRD_2017_ML*** can be run to obtain feature sets and scores based on the criteria within.
+  * Charts and graphs created by the notebooks will be saved to a folder on your Desktop, unless otherwise specified with a specific path.
 
 ## Built With
 
@@ -114,4 +115,4 @@ See below for required tools in order to run or replicate this project. Users ma
 
 ## Publications and Recognition
 
-Link to our full publication: ### insert publication link here
+Link to our full publication: [insert publication link once available]
