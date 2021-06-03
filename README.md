@@ -87,7 +87,7 @@ See below for required tools in order to run or replicate this project. Users ma
 4. Run the [NRD_merge_databases](NRD_merge_databases.ipynb) Jupyter Notebook to merge all files.
 5. With the merged CSV file, run the [NRD_2017_Defining_Cohort_SP](NRD_2017_Defining_Cohort_SP.ipynb) Jupyter Notebook to define and create the cohort.
 6. At this point, any of the Jupyter Notebooks starting with ***NRD_2017_ML*** can be run to obtain feature sets and scores based on the criteria within.
-* Charts and graphs created by the notebooks will be saved to a folder on your Desktop, unless otherwise specified with a specific path.
+    * Charts and graphs created by the notebooks will be saved to a folder on your Desktop, unless otherwise specified with a specific path.
 
 ## Built With
 
