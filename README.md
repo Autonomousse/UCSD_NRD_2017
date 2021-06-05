@@ -103,7 +103,7 @@ See below for required tools in order to run or replicate this project. Users ma
 ## Contributors
 
 * [Nghia Nguyen](https://github.com/nghia-h-nguyen) - https://www.linkedin.com/in/nghia-nguyen-7794578/
-* [Alexander Qian](https://github.com/alexsqian) - 
+* [Alexander Qian](https://github.com/alexsqian) - https://www.linkedin.com/in/alexander-qian-40962b63
 * [Peter Chen](https://github.com/datailluminations) - https://www.linkedin.com/in/peterljchen/
 * [Sagar Patel](https://github.com/Autonomousse) - https://www.linkedin.com/in/-sp
 
