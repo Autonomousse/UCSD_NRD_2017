@@ -106,7 +106,7 @@ See below for required tools in order to run or replicate this project. Users ma
 * [Nghia Nguyen](https://github.com/nghia-h-nguyen) - https://www.linkedin.com/in/nghia-nguyen-7794578/
 * [Alexander Qian](https://github.com/alexsqian) - https://www.linkedin.com/in/alexander-qian-40962b63
 * [Peter Chen](https://github.com/datailluminations) - https://www.linkedin.com/in/peterljchen/
-* [Sagar Patel](https://github.com/Autonomousse) - https://www.linkedin.com/in/-sp
+* [Sagar Patel](https://github.com/Autonomousse) - https://www.linkedin.com/in/sagarpatel9001/
 
 ## Acknowledgments
 
@@ -115,4 +115,4 @@ See below for required tools in order to run or replicate this project. Users ma
 
 ## Publications and Recognition
 
-Link to our full publication: [insert publication link once available]
+Link to our full publication: [https://pubmed.ncbi.nlm.nih.gov/35905414/](https://pubmed.ncbi.nlm.nih.gov/35905414/)
